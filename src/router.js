@@ -9,6 +9,8 @@ import Form from './views/form.vue'
 import Photo from './views/photo.vue'
 import User from './views/user.vue'
 import UserProfile from './views/userprofile.vue'
+import Search from './views/search.vue'
+import Props from './views/props.vue'
 const routes = [
     {
         path: '/', component : Home
@@ -33,6 +35,12 @@ const routes = [
     },
     {
         path: '/user/:id' , component : UserProfile // parameter route
+    },
+    {
+        path: '/search' , component : Search
+    },
+    {
+        path: '/props' , component : Props
     }
 ]
 

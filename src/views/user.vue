@@ -45,7 +45,7 @@ import axios from 'axios' // import เมื่อใช้เพราะม�
 export default {
     data() {
         return {
-            users : [],
+            //users : [],
             query : ''
         }
     },
@@ -58,16 +58,24 @@ export default {
         async getUsers() {
             try {
                 const res = await axios.get('https://jsonplaceholder.typicode.com/users')
-                this.users = res.data
+                //this.users = res.data
+                this.updateUser(res.data);
                 //console.log(this.users.length)
             } catch(e) {
                 //console.log(e.message)
             }
             
+        },
+
+        updateUser(data) {
+            this.$store.commit('updateUsers',data)
         }
         
     },
     computed : {
+        users() {
+            return this.$store.state.users
+        },
         filteruser () {
             // .filter return เป็น array ถ้า เป็น .find จะเป็น ชิ้นเดียวแล้วหยุดทำ
             const pattern = new RegExp(this.query , 'i')

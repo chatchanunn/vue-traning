@@ -55,6 +55,12 @@ export default {
                 },
                 {   to : '/user' , 
                     text : 'User'
+                },
+                {   to : '/search' , 
+                    text : 'Search'
+                },
+                {   to : '/props' , 
+                    text : 'Props'
                 }
             ]
         }
